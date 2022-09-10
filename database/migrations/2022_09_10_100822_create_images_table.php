@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->morphs('imageable');
             $table->string('image_path');
-            $table->string('disk')->default('local');
+            $table->string('disk')->default('public');
             $table->timestamps();
         });
     }
