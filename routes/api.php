@@ -16,5 +16,6 @@ Route::prefix('v1')->group(function () {
         });
 
     Route::get('sellers/{id}/products', SellerProductController::class);
-    
+
 });
+

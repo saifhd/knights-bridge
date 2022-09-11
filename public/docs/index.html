@@ -1,0 +1,922 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>KnightsBridge</title>
+
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../docs/css/theme-default.style.css" media="screen">
+    <link rel="stylesheet" href="../docs/css/theme-default.print.css" media="print">
+
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.10/lodash.min.js"></script>
+
+    <link rel="stylesheet"
+          href="https://unpkg.com/@highlightjs/cdn-assets@10.7.2/styles/obsidian.min.css">
+    <script src="https://unpkg.com/@highlightjs/cdn-assets@10.7.2/highlight.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jets/0.14.1/jets.min.js"></script>
+
+    <style id="language-style">
+        /* starts out as display none and is replaced with js later  */
+                    body .content .bash-example code { display: none; }
+                    body .content .javascript-example code { display: none; }
+            </style>
+
+    <script>
+        var baseUrl = "http://localhost:8000";
+        var useCsrf = Boolean();
+        var csrfUrl = "/sanctum/csrf-cookie";
+    </script>
+    <script src="../docs/js/tryitout-4.0.0.js"></script>
+
+    <script src="../docs/js/theme-default-4.0.0.js"></script>
+
+</head>
+
+<body data-languages="[&quot;bash&quot;,&quot;javascript&quot;]">
+
+<a href="#" id="nav-button">
+    <span>
+        MENU
+        <img src="../docs/images/navbar.png" alt="navbar-image" />
+    </span>
+</a>
+<div class="tocify-wrapper">
+    
+            <div class="lang-selector">
+                                            <button type="button" class="lang-button" data-language-name="bash">bash</button>
+                                            <button type="button" class="lang-button" data-language-name="javascript">javascript</button>
+                    </div>
+    
+    <div class="search">
+        <input type="text" class="search" id="input-search" placeholder="Search">
+    </div>
+
+    <div id="toc">
+                    <ul id="tocify-header-introduction" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="introduction">
+                    <a href="#introduction">Introduction</a>
+                </li>
+                            </ul>
+                    <ul id="tocify-header-authenticating-requests" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="authenticating-requests">
+                    <a href="#authenticating-requests">Authenticating requests</a>
+                </li>
+                            </ul>
+                    <ul id="tocify-header-products" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="products">
+                    <a href="#products">Products</a>
+                </li>
+                                    <ul id="tocify-subheader-products" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="products-GETapi-v1-products">
+                                <a href="#products-GETapi-v1-products">Get Product List.</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="products-GETapi-v1-products--product_id-">
+                                <a href="#products-GETapi-v1-products--product_id-">Get a Single Product.</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="products-GETapi-v1-products--product_id--sellers">
+                                <a href="#products-GETapi-v1-products--product_id--sellers">Get Seller Details For A Product.</a>
+                            </li>
+                                                                        </ul>
+                            </ul>
+                    <ul id="tocify-header-sellers" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="sellers">
+                    <a href="#sellers">Sellers</a>
+                </li>
+                                    <ul id="tocify-subheader-sellers" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="sellers-GETapi-v1-sellers--id--products">
+                                <a href="#sellers-GETapi-v1-sellers--id--products">Get Product List For Seller.</a>
+                            </li>
+                                                                        </ul>
+                            </ul>
+            </div>
+
+            <ul class="toc-footer" id="toc-footer">
+                            <li><a href="../docs/collection.json">View Postman collection</a></li>
+                            <li><a href="../docs/openapi.yaml">View OpenAPI spec</a></li>
+                            <li><a href="http://github.com/knuckleswtf/scribe">Documentation powered by Scribe ✍</a></li>
+                    </ul>
+        <ul class="toc-footer" id="last-updated">
+        <li>Last updated: September 11 2022</li>
+    </ul>
+</div>
+
+<div class="page-wrapper">
+    <div class="dark-box"></div>
+    <div class="content">
+        <h1 id="introduction">Introduction</h1>
+<p>This documentation aims to provide all the information you need to work with our API.</p>
+<aside>As you scroll, you'll see code examples for working with the API in different programming languages in the dark area to the right (or as part of the content on mobile).
+You can switch the language used with the tabs at the top right (or from the nav menu at the top left on mobile).</aside>
+<blockquote>
+<p>Base URL</p>
+</blockquote>
+<pre><code class="language-yaml">http://localhost:8000</code></pre>
+
+        <h1 id="authenticating-requests">Authenticating requests</h1>
+<p>This API is not authenticated.</p>
+
+        <h1 id="products">Products</h1>
+
+    <p>APIs for managing Product Management</p>
+
+                                <h2 id="products-GETapi-v1-products">Get Product List.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-v1-products">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://localhost:8000/api/v1/products" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost:8000/api/v1/products"
+);
+
+const headers = {
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-v1-products">
+            <blockquote>
+            <p>Example response (200, Success):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;data&quot;: [
+        {
+            &quot;id&quot;: 1,
+            &quot;description&quot;: &quot;tempora quia&quot;,
+            &quot;images&quot;: [
+                {
+                    &quot;id&quot;: 1,
+                    &quot;image_url&quot;: &quot;http://localhost:8000/storage/storage/products/commodi.jpg&quot;
+                },
+                {
+                    &quot;id&quot;: 2,
+                    &quot;image_url&quot;: &quot;http://localhost:8000/storage/storage/products/eos.jpg&quot;
+                },
+                {
+                    &quot;id&quot;: 3,
+                    &quot;image_url&quot;: &quot;http://localhost:8000/storage/storage/products/officiis.jpg&quot;
+                }
+            ]
+        },
+        {
+            &quot;id&quot;: 2,
+            &quot;description&quot;: &quot;consequatur et aspernatur&quot;,
+            &quot;images&quot;: [
+                {
+                    &quot;id&quot;: 4,
+                    &quot;image_url&quot;: &quot;http://localhost:8000/storage/storage/products/qui.jpg&quot;
+                },
+                {
+                    &quot;id&quot;: 5,
+                    &quot;image_url&quot;: &quot;http://localhost:8000/storage/storage/products/ducimus.jpg&quot;
+                },
+                {
+                    &quot;id&quot;: 6,
+                    &quot;image_url&quot;: &quot;http://localhost:8000/storage/storage/products/cum.jpg&quot;
+                }
+            ]
+        },
+        {
+            &quot;id&quot;: 3,
+            &quot;description&quot;: &quot;tempore dignissimos et aspernatur voluptas&quot;,
+            &quot;images&quot;: [
+                {
+                    &quot;id&quot;: 7,
+                    &quot;image_url&quot;: &quot;http://localhost:8000/storage/storage/products/occaecati.jpg&quot;
+                },
+                {
+                    &quot;id&quot;: 8,
+                    &quot;image_url&quot;: &quot;http://localhost:8000/storage/storage/products/inventore.jpg&quot;
+                },
+                {
+                    &quot;id&quot;: 9,
+                    &quot;image_url&quot;: &quot;http://localhost:8000/storage/storage/products/ut.jpg&quot;
+                }
+            ]
+        },
+        {
+            &quot;id&quot;: 4,
+            &quot;description&quot;: &quot;et similique mollitia molestiae tenetur&quot;,
+            &quot;images&quot;: [
+                {
+                    &quot;id&quot;: 10,
+                    &quot;image_url&quot;: &quot;http://localhost:8000/storage/storage/products/architecto.jpg&quot;
+                },
+                {
+                    &quot;id&quot;: 11,
+                    &quot;image_url&quot;: &quot;http://localhost:8000/storage/storage/products/cumque.jpg&quot;
+                },
+                {
+                    &quot;id&quot;: 12,
+                    &quot;image_url&quot;: &quot;http://localhost:8000/storage/storage/products/nostrum.jpg&quot;
+                }
+            ]
+        },
+        {
+            &quot;id&quot;: 5,
+            &quot;description&quot;: &quot;qui nulla eveniet autem ex&quot;,
+            &quot;images&quot;: [
+                {
+                    &quot;id&quot;: 13,
+                    &quot;image_url&quot;: &quot;http://localhost:8000/storage/storage/products/aut.jpg&quot;
+                },
+                {
+                    &quot;id&quot;: 14,
+                    &quot;image_url&quot;: &quot;http://localhost:8000/storage/storage/products/exercitationem.jpg&quot;
+                },
+                {
+                    &quot;id&quot;: 15,
+                    &quot;image_url&quot;: &quot;http://localhost:8000/storage/storage/products/dignissimos.jpg&quot;
+                }
+            ]
+        },
+        {
+            &quot;id&quot;: 6,
+            &quot;description&quot;: &quot;sunt in debitis&quot;,
+            &quot;images&quot;: [
+                {
+                    &quot;id&quot;: 16,
+                    &quot;image_url&quot;: &quot;http://localhost:8000/storage/storage/products/consequatur.jpg&quot;
+                },
+                {
+                    &quot;id&quot;: 17,
+                    &quot;image_url&quot;: &quot;http://localhost:8000/storage/storage/products/ipsa.jpg&quot;
+                },
+                {
+                    &quot;id&quot;: 18,
+                    &quot;image_url&quot;: &quot;http://localhost:8000/storage/storage/products/minima.jpg&quot;
+                }
+            ]
+        },
+        {
+            &quot;id&quot;: 7,
+            &quot;description&quot;: &quot;consequatur assumenda&quot;,
+            &quot;images&quot;: [
+                {
+                    &quot;id&quot;: 19,
+                    &quot;image_url&quot;: &quot;http://localhost:8000/storage/storage/products/voluptas.jpg&quot;
+                },
+                {
+                    &quot;id&quot;: 20,
+                    &quot;image_url&quot;: &quot;http://localhost:8000/storage/storage/products/beatae.jpg&quot;
+                },
+                {
+                    &quot;id&quot;: 21,
+                    &quot;image_url&quot;: &quot;http://localhost:8000/storage/storage/products/rem.jpg&quot;
+                }
+            ]
+        },
+        {
+            &quot;id&quot;: 8,
+            &quot;description&quot;: &quot;enim omnis&quot;,
+            &quot;images&quot;: [
+                {
+                    &quot;id&quot;: 22,
+                    &quot;image_url&quot;: &quot;http://localhost:8000/storage/storage/products/vel.jpg&quot;
+                },
+                {
+                    &quot;id&quot;: 23,
+                    &quot;image_url&quot;: &quot;http://localhost:8000/storage/storage/products/blanditiis.jpg&quot;
+                },
+                {
+                    &quot;id&quot;: 24,
+                    &quot;image_url&quot;: &quot;http://localhost:8000/storage/storage/products/esse.jpg&quot;
+                }
+            ]
+        },
+        {
+            &quot;id&quot;: 9,
+            &quot;description&quot;: &quot;voluptatem saepe&quot;,
+            &quot;images&quot;: [
+                {
+                    &quot;id&quot;: 25,
+                    &quot;image_url&quot;: &quot;http://localhost:8000/storage/storage/products/et.jpg&quot;
+                },
+                {
+                    &quot;id&quot;: 26,
+                    &quot;image_url&quot;: &quot;http://localhost:8000/storage/storage/products/et.jpg&quot;
+                },
+                {
+                    &quot;id&quot;: 27,
+                    &quot;image_url&quot;: &quot;http://localhost:8000/storage/storage/products/alias.jpg&quot;
+                }
+            ]
+        },
+        {
+            &quot;id&quot;: 10,
+            &quot;description&quot;: &quot;fuga quia vel modi amet&quot;,
+            &quot;images&quot;: [
+                {
+                    &quot;id&quot;: 28,
+                    &quot;image_url&quot;: &quot;http://localhost:8000/storage/storage/products/voluptas.jpg&quot;
+                },
+                {
+                    &quot;id&quot;: 29,
+                    &quot;image_url&quot;: &quot;http://localhost:8000/storage/storage/products/vel.jpg&quot;
+                },
+                {
+                    &quot;id&quot;: 30,
+                    &quot;image_url&quot;: &quot;http://localhost:8000/storage/storage/products/quis.jpg&quot;
+                }
+            ]
+        }
+    ],
+    &quot;links&quot;: {
+        &quot;first&quot;: &quot;http://localhost:8000/api/v1/products?page=1&quot;,
+        &quot;last&quot;: &quot;http://localhost:8000/api/v1/products?page=1&quot;,
+        &quot;prev&quot;: null,
+        &quot;next&quot;: null
+    },
+    &quot;meta&quot;: {
+        &quot;current_page&quot;: 1,
+        &quot;from&quot;: 1,
+        &quot;last_page&quot;: 1,
+        &quot;links&quot;: [
+            {
+                &quot;url&quot;: null,
+                &quot;label&quot;: &quot;&amp;laquo; Previous&quot;,
+                &quot;active&quot;: false
+            },
+            {
+                &quot;url&quot;: &quot;http://localhost:8000/api/v1/products?page=1&quot;,
+                &quot;label&quot;: &quot;1&quot;,
+                &quot;active&quot;: true
+            },
+            {
+                &quot;url&quot;: null,
+                &quot;label&quot;: &quot;Next &amp;raquo;&quot;,
+                &quot;active&quot;: false
+            }
+        ],
+        &quot;path&quot;: &quot;http://localhost:8000/api/v1/products&quot;,
+        &quot;per_page&quot;: 15,
+        &quot;to&quot;: 10,
+        &quot;total&quot;: 10
+    }
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-v1-products" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-v1-products"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v1-products"></code></pre>
+</span>
+<span id="execution-error-GETapi-v1-products" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-v1-products"></code></pre>
+</span>
+<form id="form-GETapi-v1-products" data-method="GET"
+      data-path="api/v1/products"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-products', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-v1-products"
+                    onclick="tryItOut('GETapi-v1-products');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-v1-products"
+                    onclick="cancelTryOut('GETapi-v1-products');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-v1-products" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/v1/products</code></b>
+        </p>
+                    </form>
+
+                    <h2 id="products-GETapi-v1-products--product_id-">Get a Single Product.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-v1-products--product_id-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://localhost:8000/api/v1/products/1" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost:8000/api/v1/products/1"
+);
+
+const headers = {
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-v1-products--product_id-">
+            <blockquote>
+            <p>Example response (404, Product not found):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json"></code>
+ </pre>
+            <blockquote>
+            <p>Example response (200, Success):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;data&quot;: {
+        &quot;id&quot;: 1,
+        &quot;description&quot;: &quot;tempora quia&quot;,
+        &quot;images&quot;: [
+            {
+                &quot;id&quot;: 1,
+                &quot;image_url&quot;: &quot;http://localhost:8000/storage/storage/products/commodi.jpg&quot;
+            },
+            {
+                &quot;id&quot;: 2,
+                &quot;image_url&quot;: &quot;http://localhost:8000/storage/storage/products/eos.jpg&quot;
+            },
+            {
+                &quot;id&quot;: 3,
+                &quot;image_url&quot;: &quot;http://localhost:8000/storage/storage/products/officiis.jpg&quot;
+            }
+        ],
+        &quot;sellers&quot;: [
+            {
+                &quot;id&quot;: 1,
+                &quot;name&quot;: &quot;Prof. Percy Daugherty&quot;,
+                &quot;pivot&quot;: {
+                    &quot;stock&quot;: 878,
+                    &quot;price&quot;: &quot;78.00&quot;
+                }
+            },
+            {
+                &quot;id&quot;: 3,
+                &quot;name&quot;: &quot;Robyn Collier&quot;,
+                &quot;pivot&quot;: {
+                    &quot;stock&quot;: 836,
+                    &quot;price&quot;: &quot;66.00&quot;
+                }
+            },
+            {
+                &quot;id&quot;: 8,
+                &quot;name&quot;: &quot;Linda Mertz V&quot;,
+                &quot;pivot&quot;: {
+                    &quot;stock&quot;: 19,
+                    &quot;price&quot;: &quot;81.00&quot;
+                }
+            }
+        ]
+    }
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-v1-products--product_id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-v1-products--product_id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v1-products--product_id-"></code></pre>
+</span>
+<span id="execution-error-GETapi-v1-products--product_id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-v1-products--product_id-"></code></pre>
+</span>
+<form id="form-GETapi-v1-products--product_id-" data-method="GET"
+      data-path="api/v1/products/{product_id}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-products--product_id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-v1-products--product_id-"
+                    onclick="tryItOut('GETapi-v1-products--product_id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-v1-products--product_id-"
+                    onclick="cancelTryOut('GETapi-v1-products--product_id-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-v1-products--product_id-" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/v1/products/{product_id}</code></b>
+        </p>
+                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <p>
+                <b><code>product_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+                <input type="number"
+               name="product_id"
+               data-endpoint="GETapi-v1-products--product_id-"
+               value="1"
+               data-component="url" hidden>
+    <br>
+<p>The ID of the product.</p>
+            </p>
+                    </form>
+
+                    <h2 id="products-GETapi-v1-products--product_id--sellers">Get Seller Details For A Product.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-v1-products--product_id--sellers">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://localhost:8000/api/v1/products/1/sellers" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost:8000/api/v1/products/1/sellers"
+);
+
+const headers = {
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-v1-products--product_id--sellers">
+            <blockquote>
+            <p>Example response (404, Product not found):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json"></code>
+ </pre>
+            <blockquote>
+            <p>Example response (200, Success):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;data&quot;: [
+        {
+            &quot;id&quot;: 1,
+            &quot;name&quot;: &quot;Prof. Percy Daugherty&quot;,
+            &quot;pivot&quot;: {
+                &quot;stock&quot;: 878,
+                &quot;price&quot;: &quot;78.00&quot;
+            }
+        },
+        {
+            &quot;id&quot;: 3,
+            &quot;name&quot;: &quot;Robyn Collier&quot;,
+            &quot;pivot&quot;: {
+                &quot;stock&quot;: 836,
+                &quot;price&quot;: &quot;66.00&quot;
+            }
+        },
+        {
+            &quot;id&quot;: 8,
+            &quot;name&quot;: &quot;Linda Mertz V&quot;,
+            &quot;pivot&quot;: {
+                &quot;stock&quot;: 19,
+                &quot;price&quot;: &quot;81.00&quot;
+            }
+        }
+    ]
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-v1-products--product_id--sellers" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-v1-products--product_id--sellers"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v1-products--product_id--sellers"></code></pre>
+</span>
+<span id="execution-error-GETapi-v1-products--product_id--sellers" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-v1-products--product_id--sellers"></code></pre>
+</span>
+<form id="form-GETapi-v1-products--product_id--sellers" data-method="GET"
+      data-path="api/v1/products/{product_id}/sellers"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-products--product_id--sellers', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-v1-products--product_id--sellers"
+                    onclick="tryItOut('GETapi-v1-products--product_id--sellers');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-v1-products--product_id--sellers"
+                    onclick="cancelTryOut('GETapi-v1-products--product_id--sellers');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-v1-products--product_id--sellers" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/v1/products/{product_id}/sellers</code></b>
+        </p>
+                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <p>
+                <b><code>product_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+                <input type="number"
+               name="product_id"
+               data-endpoint="GETapi-v1-products--product_id--sellers"
+               value="1"
+               data-component="url" hidden>
+    <br>
+<p>The ID of the product.</p>
+            </p>
+                    </form>
+
+                <h1 id="sellers">Sellers</h1>
+
+    <p>APIs for managing Sellers</p>
+
+                                <h2 id="sellers-GETapi-v1-sellers--id--products">Get Product List For Seller.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-v1-sellers--id--products">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://localhost:8000/api/v1/sellers/1/products" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost:8000/api/v1/sellers/1/products"
+);
+
+const headers = {
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-v1-sellers--id--products">
+            <blockquote>
+            <p>Example response (404, Product not found):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json"></code>
+ </pre>
+            <blockquote>
+            <p>Example response (200, Success):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;data&quot;: [
+        {
+            &quot;id&quot;: 1,
+            &quot;description&quot;: &quot;tempora quia&quot;,
+            &quot;stock&quot;: 878,
+            &quot;price&quot;: 78,
+            &quot;images&quot;: [
+                {
+                    &quot;id&quot;: 1,
+                    &quot;image_url&quot;: &quot;http://localhost:8000/storage/storage/products/commodi.jpg&quot;
+                },
+                {
+                    &quot;id&quot;: 2,
+                    &quot;image_url&quot;: &quot;http://localhost:8000/storage/storage/products/eos.jpg&quot;
+                },
+                {
+                    &quot;id&quot;: 3,
+                    &quot;image_url&quot;: &quot;http://localhost:8000/storage/storage/products/officiis.jpg&quot;
+                }
+            ],
+            &quot;created_at&quot;: &quot;2022-09-11T07:54:20.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-11T07:54:20.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 2,
+            &quot;description&quot;: &quot;consequatur et aspernatur&quot;,
+            &quot;stock&quot;: 878,
+            &quot;price&quot;: 78,
+            &quot;images&quot;: [
+                {
+                    &quot;id&quot;: 4,
+                    &quot;image_url&quot;: &quot;http://localhost:8000/storage/storage/products/qui.jpg&quot;
+                },
+                {
+                    &quot;id&quot;: 5,
+                    &quot;image_url&quot;: &quot;http://localhost:8000/storage/storage/products/ducimus.jpg&quot;
+                },
+                {
+                    &quot;id&quot;: 6,
+                    &quot;image_url&quot;: &quot;http://localhost:8000/storage/storage/products/cum.jpg&quot;
+                }
+            ],
+            &quot;created_at&quot;: &quot;2022-09-11T07:54:20.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-11T07:54:20.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 6,
+            &quot;description&quot;: &quot;sunt in debitis&quot;,
+            &quot;stock&quot;: 878,
+            &quot;price&quot;: 78,
+            &quot;images&quot;: [
+                {
+                    &quot;id&quot;: 16,
+                    &quot;image_url&quot;: &quot;http://localhost:8000/storage/storage/products/consequatur.jpg&quot;
+                },
+                {
+                    &quot;id&quot;: 17,
+                    &quot;image_url&quot;: &quot;http://localhost:8000/storage/storage/products/ipsa.jpg&quot;
+                },
+                {
+                    &quot;id&quot;: 18,
+                    &quot;image_url&quot;: &quot;http://localhost:8000/storage/storage/products/minima.jpg&quot;
+                }
+            ],
+            &quot;created_at&quot;: &quot;2022-09-11T07:54:20.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-11T07:54:20.000000Z&quot;
+        }
+    ],
+    &quot;links&quot;: {
+        &quot;first&quot;: &quot;http://localhost:8000/api/v1/sellers/1/products?page=1&quot;,
+        &quot;last&quot;: &quot;http://localhost:8000/api/v1/sellers/1/products?page=1&quot;,
+        &quot;prev&quot;: null,
+        &quot;next&quot;: null
+    },
+    &quot;meta&quot;: {
+        &quot;current_page&quot;: 1,
+        &quot;from&quot;: 1,
+        &quot;last_page&quot;: 1,
+        &quot;links&quot;: [
+            {
+                &quot;url&quot;: null,
+                &quot;label&quot;: &quot;&amp;laquo; Previous&quot;,
+                &quot;active&quot;: false
+            },
+            {
+                &quot;url&quot;: &quot;http://localhost:8000/api/v1/sellers/1/products?page=1&quot;,
+                &quot;label&quot;: &quot;1&quot;,
+                &quot;active&quot;: true
+            },
+            {
+                &quot;url&quot;: null,
+                &quot;label&quot;: &quot;Next &amp;raquo;&quot;,
+                &quot;active&quot;: false
+            }
+        ],
+        &quot;path&quot;: &quot;http://localhost:8000/api/v1/sellers/1/products&quot;,
+        &quot;per_page&quot;: 15,
+        &quot;to&quot;: 3,
+        &quot;total&quot;: 3
+    }
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-v1-sellers--id--products" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-v1-sellers--id--products"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v1-sellers--id--products"></code></pre>
+</span>
+<span id="execution-error-GETapi-v1-sellers--id--products" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-v1-sellers--id--products"></code></pre>
+</span>
+<form id="form-GETapi-v1-sellers--id--products" data-method="GET"
+      data-path="api/v1/sellers/{id}/products"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-sellers--id--products', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-v1-sellers--id--products"
+                    onclick="tryItOut('GETapi-v1-sellers--id--products');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-v1-sellers--id--products"
+                    onclick="cancelTryOut('GETapi-v1-sellers--id--products');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-v1-sellers--id--products" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/v1/sellers/{id}/products</code></b>
+        </p>
+                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <p>
+                <b><code>id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+                <input type="number"
+               name="id"
+               data-endpoint="GETapi-v1-sellers--id--products"
+               value="1"
+               data-component="url" hidden>
+    <br>
+<p>The ID of the seller.</p>
+            </p>
+                    </form>
+
+            
+
+        
+    </div>
+    <div class="dark-box">
+                    <div class="lang-selector">
+                                                        <button type="button" class="lang-button" data-language-name="bash">bash</button>
+                                                        <button type="button" class="lang-button" data-language-name="javascript">javascript</button>
+                            </div>
+            </div>
+</div>
+</body>
+</html>

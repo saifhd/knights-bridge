@@ -1,0 +1,46 @@
+{
+    "data": {
+        "id": 1,
+        "description": "tempora quia",
+        "images": [
+            {
+                "id": 1,
+                "image_url": "http://localhost:8000/storage/storage/products/commodi.jpg"
+            },
+            {
+                "id": 2,
+                "image_url": "http://localhost:8000/storage/storage/products/eos.jpg"
+            },
+            {
+                "id": 3,
+                "image_url": "http://localhost:8000/storage/storage/products/officiis.jpg"
+            }
+        ],
+        "sellers": [
+            {
+                "id": 1,
+                "name": "Prof. Percy Daugherty",
+                "pivot": {
+                    "stock": 878,
+                    "price": "78.00"
+                }
+            },
+            {
+                "id": 3,
+                "name": "Robyn Collier",
+                "pivot": {
+                    "stock": 836,
+                    "price": "66.00"
+                }
+            },
+            {
+                "id": 8,
+                "name": "Linda Mertz V",
+                "pivot": {
+                    "stock": 19,
+                    "price": "81.00"
+                }
+            }
+        ]
+    }
+}

@@ -1,0 +1,28 @@
+{
+    "data": [
+        {
+            "id": 1,
+            "name": "Prof. Percy Daugherty",
+            "pivot": {
+                "stock": 878,
+                "price": "78.00"
+            }
+        },
+        {
+            "id": 3,
+            "name": "Robyn Collier",
+            "pivot": {
+                "stock": 836,
+                "price": "66.00"
+            }
+        },
+        {
+            "id": 8,
+            "name": "Linda Mertz V",
+            "pivot": {
+                "stock": 19,
+                "price": "81.00"
+            }
+        }
+    ]
+}
